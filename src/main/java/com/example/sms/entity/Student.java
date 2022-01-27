@@ -23,17 +23,29 @@ public class Student {
 	
 	@Column(name = "email", unique = true)
 	private String email;
+
+	@Column(name="percentage")
+	private String percentage;
 	
 	
 	public Student() {
 		
 	}
-	
-	public Student(String firstName, String lastName, String email) {
+
+	public String getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(String percentage) {
+		this.percentage = percentage;
+	}
+
+	public Student(String firstName, String lastName, String email, String percentage) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.percentage=percentage;
 	}
 	
 	public Long getId() {
