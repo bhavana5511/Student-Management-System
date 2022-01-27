@@ -19,6 +19,11 @@ public class StudentController {
 		super();
 		this.studentService = studentService;
 	}
+	@GetMapping("/")
+	public String show(Model model) {
+		model.addAttribute("students", studentService.getAllStudents());
+		return "Homepage";
+	}
 
 //	List all students
 	@GetMapping("/students")
