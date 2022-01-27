@@ -2,10 +2,7 @@ package com.example.sms.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.sms.entity.Student;
 import com.example.sms.service.StudentService;
@@ -18,6 +15,11 @@ public class StudentController {
 	public StudentController(StudentService studentService) {
 		super();
 		this.studentService = studentService;
+	}
+	@RequestMapping(value="/do-stuff")
+	public String doStuffMethod() {
+		return "redirect:/students/new";
+
 	}
 	@GetMapping("/")
 	public String show(Model model) {
