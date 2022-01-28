@@ -16,6 +16,12 @@ public class StudentController {
 		super();
 		this.studentService = studentService;
 	}
+	@GetMapping("login")
+	public String login()
+	{
+		return "login";
+	}
+
 	@RequestMapping(value="/do-stuff")
 	public String doStuffMethod() {
 		return "redirect:/students/new";
